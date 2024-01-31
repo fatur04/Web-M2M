@@ -335,6 +335,7 @@
 
 </div>
 <!-- ./wrapper -->
+</body>
 
 <!-- jQuery 3 -->
 <script src="{{asset('template')}}/bower_components/jquery/dist/jquery.min.js"></script>
@@ -365,7 +366,6 @@
 
 <script src="{{asset('template')}}/dist/js/demo.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="{{asset('template')}}/datatables.css">
@@ -446,5 +446,4 @@
     })
   })
 </script>
-</body>
 </html>

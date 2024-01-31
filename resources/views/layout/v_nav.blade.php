@@ -1,37 +1,7 @@
 <ul class="sidebar-menu" data-widget="tree">
     <li class="header">MAIN NAVIGATION</li>
 
-    <!-- <li class="{{ request()->is('/dashboard') ? 'active' : '' }}">
-        <a href="/dashboard">
-          <i class="fa fa-desktop"></i> <span>Dashboard</span>
-        </a>
-    </li>
-
-    <li class="{{ request()->is('/index') ? 'active' : '' }}">
-        <a href="/index">
-          <i class="fa fa-dashboard"></i> <span>SLA Eksternal</span>
-        </a>
-    </li>
-
-    <li class="{{ request()->is('/sla_internal') ? 'active' : '' }}">
-        <a href="/sla_internal">
-          <i class="fa fa-dashboard"></i> <span>SLA Internal</span>
-        </a>
-    </li>
-
-    <li class="{{ request()->is('/user') ? 'active' : '' }}">
-        <a href="/user">
-          <i class="fa fa-user"></i> <span>Admin</span>
-        </a>
-    </li>
-
-    {{-- <li class="{{ request()->is('/report') ? 'active' : '' }}">
-        <a href="/report">
-          <i class="fa fa-book"></i> <span>Report</span>
-        </a>
-    </li> --}}
-
-    <li class="treeview">
+    <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Report</span>
             <span class="pull-right-container">
@@ -50,19 +20,54 @@
             </a>
           </li>
           </ul>
-    </li>
-
-    <li class="{{ request()->is('/reportsite') ? 'active' : '' }}">
-        <a href="/reportsite">
-          <i class="fa fa-book"></i> <span>Report SITE</span>
-        </a>
     </li> -->
 
-    <li class="{{ request()->is('/splitter') ? 'active' : '' }}">
-        <a href="/splitter">
-          <i class="fa fa-book"></i> <span>Splitter</span>
+    <li class="{{ request()->is('/soltemp') ? 'active' : '' }}">
+        <a href="/soltemp">
+          <i class="fa fa-bookmark"></i> <span>M2M SEOA</span>
         </a>
     </li>
 
+    <li class="{{ request()->is('/soltemp') ? 'active' : '' }}">
+        <a href="/m2msast">
+          <i class="fa fa-bookmark"></i> <span>M2M SAST</span>
+        </a>
+    </li>
+
+    <li class="{{ request()->is('/m2m') ? 'active' : '' }}">
+        <a href="/m2mbwa">
+          <i class="fa fa-bookmark"></i> <span>M2M BWA</span>
+        </a>
+    </li>
+
+    <li class="{{ request()->is('/sc1') ? 'active' : '' }}">
+        <a href="/sc1">
+          <i class="fa fa-book"></i> <span>SC1</span>
+        </a>
+    </li>
+
+    <li class="{{ request()->is('/strava') ? 'active' : '' }}">
+        <a href="/strava">
+          <i class="fa fa-book"></i> <span>Strava</span>
+        </a>
+    </li>
+
+    <li class="{{ request()->is('/revenue') ? 'active' : '' }}">
+        <a href="/revenue">
+          <i class="fa fa-money"></i> <span>Revenue POP</span>
+        </a>
+    </li>
+
+    <li class="{{ request()->is('/ISR') ? 'active' : '' }}">
+        <a href="/isr">
+          <i class="fa fa-address-book"></i> <span>ISR</span>
+        </a>
+    </li>
+
+    <li class="{{ request()->is('/user') ? 'active' : '' }}">
+        <a href="/user">
+          <i class="fa fa-user"></i> <span>Admin</span>
+        </a>
+    </li>
 
 </ul>

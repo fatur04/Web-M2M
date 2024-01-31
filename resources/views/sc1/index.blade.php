@@ -1,9 +1,9 @@
 @extends('layout.v_template')
-@section('title', 'View SLA Internal')
+@section('title', 'View SC1')
 
 @section('content')
 
-  <a href="/tambah_internal" class="btn btn-primary">Tambah</a>
+  <a href="/tambah_sc1" class="btn btn-primary">Tambah</a>
   <div class="box">
 
     <!-- /.box-header -->
@@ -21,21 +21,16 @@
         <thead>
             <tr>
                 <th scope="col">No</th>
-                <th scope="col">Action</th>
-                <th scope="col">Nama Site</th>
-                <th scope="col">Problem</th>
-                <th scope="col">Status</th>
-                <th scope="col">Start Problem</th>
-                <th scope="col">End Problem</th>
-                <th scope="col">Hours</th>
+                <th scope="col">Nama Splitter</th>
+                <th scope="col">Node</th>
+                <th width="150px">Latitude & Longlitude</th>
+                <th width="65px">Action</th>
 
             </tr>
         </thead>
         <tbody>
         </tbody>
     </table>
-
-
    </div>
 </div>
     <!-- /.box-body -->
@@ -50,7 +45,7 @@
               serverSide: true,
             //   processing: true,
               ajax: {
-                  url: '{{url('/datatable_internal')}}',
+                  url: '{{url('/datatable_sc1')}}',
               },
 
               columns: [
@@ -60,13 +55,11 @@
                             return meta.row + meta.settings._iDisplayStart + 1
                         }
                   },
-                    {data: 'action', name: 'action'},
-                    {data: 'site', name: 'site'},
-                    {data: 'problem', name: 'problem'},
-                    {data: 'status', name: 'status'},
-                    {data: 'mulai', name: 'mulai'},
-                    {data: 'akhir', name: 'akhir'},
-                    {data: 'hours', name: 'hours'}
+                    {data: 'nama_sc1', name: 'nama_sc1'},
+                    {data: 'node', name: 'node'},
+                    {data: 'latlong', name: 'latlong'},
+                    {data: 'action', name: 'action'}
+
               ],
               order: [[0, 'desc']]
         });

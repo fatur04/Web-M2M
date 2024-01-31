@@ -5,9 +5,18 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\SLAController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\BWAController;
+use App\Http\Controllers\ISRController;
+use App\Http\Controllers\M2MSASTController;
+use App\Http\Controllers\MapController;
 use App\Http\Controllers\sla_internalController;
 use App\Http\Controllers\MonitoringController;
+use App\Http\Controllers\RevenueController;
 use App\Http\Controllers\SplitterController;
+use App\Http\Controllers\SC1Controller;
+use App\Http\Controllers\SoltempController;
+use App\Http\Controllers\StravaController;
+use App\Http\Controllers\WhatsappController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,6 +94,68 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
     Route::get('/edit_splitter/{id}', [SplitterController::class, 'edit']);
     Route::post('/update_splitter/{id}', [SplitterController::class, 'update'])->name('splitter.show');
     Route::delete('/delete_splitter/{id}', [SplitterController::class, 'delete']);
+
+    Route::get('/sc1', [SC1Controller::class, 'index']);
+    Route::get('/datatable_sc1', [SC1Controller::class, 'yajra']);
+    Route::get('/tambah_sc1', [SC1Controller::class, 'tambah']);
+    Route::post('/simpan_sc1', [SC1Controller::class, 'simpan']);
+    Route::get('/show_sc1/{id}', [SC1Controller::class, 'show']);
+    Route::get('/edit_sc1/{id}', [SC1Controller::class, 'edit']);
+    Route::post('/update_sc1/{id}', [SC1Controller::class, 'update'])->name('sc1.show');
+    Route::delete('/delete_sc1/{id}', [SC1Controller::class, 'delete']);
+
+    //Route::get('/map', [MapController::class, 'showMap']);
+
+    Route::get('/strava', [StravaController::class, 'index']);
+    Route::get('/datatable_strava', [StravaController::class, 'yajra']);
+    Route::post('/strava/simpan', [StravaController::class, 'simpan']);
+    Route::get('/strava/edit/{id}', [StravaController::class, 'edit']);
+    Route::post('/strava/update/{id}', [StravaController::class, 'update']);
+    Route::delete('/strava/delete/{id}', [StravaController::class, 'delete']);
+
+    Route::get('/revenue', [RevenueController::class, 'index']);
+    Route::get('/datatable_revenue', [RevenueController::class, 'yajra']);
+    Route::post('/revenue/simpan', [RevenueController::class, 'simpan']);
+    Route::get('/revenue/edit/{id}', [RevenueController::class, 'edit']);
+    Route::post('/revenue/update/{id}', [RevenueController::class, 'update']);
+    Route::delete('/revenue/delete/{id}', [RevenueController::class, 'delete']);
+    Route::get('/revenue_allpop', [RevenueController::class, 'allpop']);
+    Route::get('/revenue_allpop/{pop}', [RevenueController::class, 'allpoppop']);
+    Route::get('/revenue_allpop/revenuepop/{pop}', [RevenueController::class, 'yazranode']);
+
+    Route::get('search', 'RevenueController@search')->name('search');
+
+    Route::get('/whatsapp', [WhatsappController::class, 'show']);
+    Route::get('/send-whatsapp{id}', [WhatsappController::class, 'sendMessage']);
+    Route::get('/logout', [WhatsappController::class, 'logout']);
+
+    Route::get('/soltemp', [SoltempController::class, 'show']);
+    Route::get('/soltemp/update-status/{id}', [SoltempController::class, 'status']);
+    Route::post('/soltemp/simpan', [SoltempController::class, 'simpan']);
+    Route::get('/soltemp/edit/{id}', [SoltempController::class, 'edit']);
+    Route::post('/soltemp/update/{id}', [SoltempController::class, 'update']);
+    Route::delete('/soltemp/delete/{id}', [SoltempController::class, 'delete']);
+
+    Route::get('/m2msast', [M2MSASTController::class, 'show']);
+    Route::get('/m2msast/update-status/{nojar}', [M2MSASTController::class, 'status']);
+    Route::post('/m2msast/simpan', [M2MSASTController::class, 'simpan']);
+    Route::get('/m2msast/edit/{id}', [M2MSASTController::class, 'edit']);
+    Route::post('/m2msast/update/{id}', [M2MSASTController::class, 'update']);
+    Route::delete('/m2msast/delete/{id}', [M2MSASTController::class, 'delete']);
+
+    Route::get('/m2mbwa', [BWAController::class, 'show']);
+    Route::get('/m2mbwa/update-status/{nojar}', [BWAController::class, 'status']);
+    Route::post('/m2mbwa/simpan', [BWAController::class, 'simpan']);
+    Route::get('/m2mbwa/edit/{id}', [BWAController::class, 'edit']);
+    Route::post('/m2mbwa/update/{id}', [BWAController::class, 'update']);
+    Route::delete('/m2mbwa/delete/{id}', [BWAController::class, 'delete']);
+
+    Route::get('/isr', [ISRController::class, 'index']);
+    Route::post('/isr/simpan', [ISRController::class, 'simpan']);
+    Route::get('/isr/edit/{id}', [ISRController::class, 'edit']);
+    Route::post('/isr/update/{id}', [ISRController::class, 'update']);
+    Route::delete('/isr/delete/{id}', [ISRController::class, 'delete']);
+
 });
 
 
