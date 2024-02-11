@@ -1,43 +1,31 @@
 <ul class="sidebar-menu" data-widget="tree">
     <li class="header">MAIN NAVIGATION</li>
 
-    <!-- <li class="treeview">
+    <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Report</span>
+            <i class="fa fa-edit"></i> <span>M2M</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-          <li class="{{ request()->is('/report') ? 'active' : '' }}">
-            <a href="/report">
-              <i class="fa fa-desktop"></i> <span>Monitor</span>
-            </a>
+          <li class="{{ request()->is('/soltemp') ? 'active' : '' }}">
+              <a href="/soltemp">
+                <i class="fa fa-bookmark"></i> <span>M2M SEOA</span>
+              </a>
           </li>
-          <li class="{{ request()->is('/reportsla') ? 'active' : '' }}">
-            <a href="/reportsla">
-              <i class="fa fa-book"></i> <span>Report SLA</span>
-            </a>
+          <li class="{{ request()->is('/soltemp') ? 'active' : '' }}">
+              <a href="/m2msast">
+                <i class="fa fa-bookmark"></i> <span>M2M SAST</span>
+              </a>
+          </li>
+
+          <li class="{{ request()->is('/m2m') ? 'active' : '' }}">
+              <a href="/m2mbwa">
+                <i class="fa fa-bookmark"></i> <span>M2M BWA</span>
+              </a>
           </li>
           </ul>
-    </li> -->
-
-    <li class="{{ request()->is('/soltemp') ? 'active' : '' }}">
-        <a href="/soltemp">
-          <i class="fa fa-bookmark"></i> <span>M2M SEOA</span>
-        </a>
-    </li>
-
-    <li class="{{ request()->is('/soltemp') ? 'active' : '' }}">
-        <a href="/m2msast">
-          <i class="fa fa-bookmark"></i> <span>M2M SAST</span>
-        </a>
-    </li>
-
-    <li class="{{ request()->is('/m2m') ? 'active' : '' }}">
-        <a href="/m2mbwa">
-          <i class="fa fa-bookmark"></i> <span>M2M BWA</span>
-        </a>
     </li>
 
     <li class="{{ request()->is('/sc1') ? 'active' : '' }}">
