@@ -52,10 +52,10 @@
         </a>
     </li>
 
-    <li class="{{ request()->is('/user') ? 'active' : '' }}">
+<!--     <li class="{{ request()->is('/user') ? 'active' : '' }}">
         <a href="/user">
           <i class="fa fa-user"></i> <span>Admin</span>
         </a>
-    </li>
+    </li> -->
 
 </ul>
