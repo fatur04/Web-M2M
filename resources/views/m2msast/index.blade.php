@@ -212,7 +212,7 @@ Time Limit : *_${tanggal}_*%0D%0A%0D%0A
 *_Powered by Fatur SEOA_*
                           `;
 
-            fetch(`https://bot.my.id/send-sast?number&message=${pesan}`)
+            fetch(`https://bot.seoa.my.id/send-sast?number&message=${pesan}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Terjadi kesalahan dalam permintaan.');
