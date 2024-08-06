@@ -102,14 +102,6 @@ $(document).ready(function() {
     });
 </script>
 
-{{-- <script type="text/javascript">
-    $(document).ready(function() {
-            setInterval(function() {
-                $.("table").load("{{ url('logactivity') }}");
-            }, 1000);
-        });
-</script> --}}
-
 <script>
     async function fetchData() {
         try {
@@ -152,6 +144,6 @@ $(document).ready(function() {
     window.onload = fetchData;
 
     // Set interval to fetch data every 5 seconds (5000 milliseconds)
-    setInterval(fetchData, 1000);
+    //setInterval(fetchData, 1000);
 </script>
 @endsection
