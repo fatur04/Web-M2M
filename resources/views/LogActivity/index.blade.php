@@ -127,17 +127,19 @@ $(document).ready(function() {
             const cluster = document.createElement('td');
             cluster.textContent = item.cluster;
             const start = document.createElement('td');
-            tanggal.textContent = item.start;
+            start.textContent = item.start;
             const end = document.createElement('td');
-            image.textContent = item.end;
+            end.textContent = item.end;
             const activity = document.createElement('td');
             activity.textContent = item.activity;
+            const activity = document.createElement('td');
             row.appendChild(id_log);
             row.appendChild(nama);
             row.appendChild(initial);
+            row.appendChild(cluster);
+            row.appendChild(start);
+            row.appendChild(end);
             row.appendChild(activity);
-            row.appendChild(tanggal);
-            row.appendChild(image);
             tbody.appendChild(row);
         });
     }
