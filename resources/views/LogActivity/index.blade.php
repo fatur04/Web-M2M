@@ -38,7 +38,7 @@ $(document).ready(function() {
                 <th >Start</th>
                 <th >End</th>
                 <th >Activity</th>
-                {{-- <th width="50px">Action</th> --}}
+                <th width="50px">Action</th>
                 <!-- <th width="30px">Evidance Pengisian Kuota</th> -->
 
             </tr>
@@ -124,12 +124,14 @@ $(document).ready(function() {
             nama.textContent = item.nama;
             const initial = document.createElement('td');
             initial.textContent = item.initial;
+            const cluster = document.createElement('td');
+            cluster.textContent = item.cluster;
+            const start = document.createElement('td');
+            tanggal.textContent = item.start;
+            const end = document.createElement('td');
+            image.textContent = item.end;
             const activity = document.createElement('td');
             activity.textContent = item.activity;
-            const tanggal = document.createElement('td');
-            tanggal.textContent = item.tanggal;
-            const image = document.createElement('td');
-            image.textContent = item.image;
             row.appendChild(id_log);
             row.appendChild(nama);
             row.appendChild(initial);
