@@ -77,13 +77,13 @@ $(document).ready(function() {
                         <table class="table table-striped" id="table" width="100%">
                             <thead>
                                 <tr>
-                                    <th width="5px">No</th>
-                                    <th width="50px">Nama</th>
-                                    <th width="30px">Initial</th>
-                                    <th width="70px">Activity</th>
-                                    <th width="50px">Date</th>
-                                    <th width="70px">Gambar</th>
-                                    <th width="50px">Action</th>
+                                    <th >No</th>
+                                    <th >Initial</th>
+                                    <th >Cluster</th>
+                                    <th >Start</th>
+                                    <th >End</th>
+                                    <th >Activity</th>
+                                    {{-- <th width="50px">Action</th> --}}
                                     <!-- <th width="30px">Evidance Pengisian Kuota</th> -->
                     
                                 </tr>
@@ -92,15 +92,18 @@ $(document).ready(function() {
                                 @foreach ($data as $item)
                                     <tr>
                                         <td>{{ $item->id_log }}</td>
-                                        <td>{{ $item->nama }}</td>
                                         <td>{{ $item->initial }}</td>
+                                        <td>{{ $item->cluster }}</td>
+                                        <td>{{ $item->start }}</td>
+                                        <td>{{ $item->end }}</td>
                                         <td>{{ $item->activity }}</td>
-                                        <td>{{ $item->tanggal }}</td>
-                                        <td>{{ $item->image }}</td>
-                                        <td>
+                                        {{-- <td>
+                                            <img src="{{ asset('activity/' . $item->image) }}" width="200" height="400" alt="image" class="img-center">
+                                        </td> --}}
+                                        {{-- <td>
                                             <a href="/edit-activity/{{ $item->id_log }}" class="btn btn-warning fa fa-pencil-square-o" title="Edit"></a>
                                             <a href="/edit-activity/{{ $item->id_log }}" class="btn btn-danger remove-user fa fa-trash" title="Delete"></a>
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                 @endforeach
                             </tbody>
