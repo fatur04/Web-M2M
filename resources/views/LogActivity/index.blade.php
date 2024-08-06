@@ -144,6 +144,6 @@ $(document).ready(function() {
     window.onload = fetchData;
 
     // Set interval to fetch data every 5 seconds (5000 milliseconds)
-    //setInterval(fetchData, 1000);
+    setInterval(fetchData, 1000);
 </script>
 @endsection
