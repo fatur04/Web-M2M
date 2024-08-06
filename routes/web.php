@@ -175,6 +175,8 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
     Route::get('/get-activity', [LogActivityController::class, 'getActivity']);
     Route::get('/get-activities', [LogActivityController::class, 'getActivities']);
     Route::get('/edit-activity/{id}', [LogActivityController::class, 'edit']);
+    Route::post('/logactivity/update/{id}', [LogActivityController::class, 'updatelog']);
+    Route::delete('/logactivity/delete/{id}', [LogActivityController::class, 'delete']);
 
 });
 
