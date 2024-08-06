@@ -7,6 +7,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BWAController;
 use App\Http\Controllers\ISRController;
+use App\Http\Controllers\LogActivityController;
+use App\Http\Controllers\M2MBDAController;
 use App\Http\Controllers\M2MSASTController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\sla_internalController;
@@ -31,11 +33,12 @@ use App\Http\Controllers\WhatsappController;
 
 Route::get('/', [LoginController::class, 'showLoginForm']);
 //Route::get('/login', [LoginController::class, 'showLoginForm']);
+//Route::get('/formActivity', [LogActivityController::class, 'form']);
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
 
-    Route::get('/dashboard', [SLAController::class, 'dashboard']);
-    Route::get('/hasil/{tgl_awal}/{tgl_akhir}', [SLAController::class, 'hasil']);
+    //Route::get('/dashboard', [SLAController::class, 'dashboard']);
+    //Route::get('/hasil/{tgl_awal}/{tgl_akhir}', [SLAController::class, 'hasil']);
     //Route::get('/dashboard_view/{primacom}/{tgl_awal}/{tgl_akhir}', [SLAController::class, 'dashboard_view']);
 
     Route::get('/index', [SLAController::class, 'index']);
@@ -143,6 +146,13 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
     Route::post('/m2msast/update/{id}', [M2MSASTController::class, 'update']);
     Route::delete('/m2msast/delete/{id}', [M2MSASTController::class, 'delete']);
 
+    Route::get('/m2mbda', [M2MBDAController::class, 'show']);
+    Route::get('/m2mbda/update-status/{nojar}', [M2MBDAController::class, 'status']);
+    Route::post('/m2mbda/simpan', [M2MBDAController::class, 'simpan']);
+    Route::get('/m2mbda/edit/{id}', [M2MBDAController::class, 'edit']);
+    Route::post('/m2mbda/update/{id}', [M2MBDAController::class, 'update']);
+    Route::delete('/m2mbda/delete/{id}', [M2MBDAController::class, 'delete']);
+
     Route::get('/m2mbwa', [BWAController::class, 'show']);
     Route::get('/m2mbwa/update-status/{nojar}', [BWAController::class, 'status']);
     Route::post('/m2mbwa/simpan', [BWAController::class, 'simpan']);
@@ -155,6 +165,16 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
     Route::get('/isr/edit/{id}', [ISRController::class, 'edit']);
     Route::post('/isr/update/{id}', [ISRController::class, 'update']);
     Route::delete('/isr/delete/{id}', [ISRController::class, 'delete']);
+
+    Route::get('/logactivity', [LogActivityController::class, 'index']);
+    Route::get('/logupdate', [LogActivityController::class, 'update']);
+    Route::get('/Inisial', [LogActivityController::class, 'inisial']);
+    Route::get('/formActivity', [LogActivityController::class, 'form']);
+
+    Route::post('/store', [LogActivityController::class, 'store'])->name('form.store');
+    Route::get('/get-activity', [LogActivityController::class, 'getActivity']);
+    Route::get('/get-activities', [LogActivityController::class, 'getActivities']);
+    Route::get('/edit-activity/{id}', [LogActivityController::class, 'edit']);
 
 });
 
