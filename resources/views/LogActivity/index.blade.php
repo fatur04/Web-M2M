@@ -56,10 +56,10 @@ $(document).ready(function() {
                     {{-- <td>
                         <img src="{{ asset('activity/' . $item->image) }}" width="200" height="400" alt="image" class="img-center">
                     </td> --}}
-                    {{-- <td>
+                    <td>
                         <a href="/edit-activity/{{ $item->id_log }}" class="btn btn-warning fa fa-pencil-square-o" title="Edit"></a>
-                        <a href="/edit-activity/{{ $item->id_log }}" class="btn btn-danger remove-user fa fa-trash" title="Delete"></a>
-                    </td> --}}
+                        <a href="/logactivity/delete/{{ $item->id_log }}" class="btn btn-danger remove-user fa fa-trash" title="Delete"></a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

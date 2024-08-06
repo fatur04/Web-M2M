@@ -32,7 +32,7 @@ $(document).ready(function() {
                                 <div class="card-header">
                                     <h3 class="card-title">Formulir Aktivitas</h3>
                                 </div>
-                                <form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="/logactivity/update/{{ $activity->id_log }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" id="activity-id" name="id">
                                     <div class="card-body">
@@ -42,19 +42,27 @@ $(document).ready(function() {
                                         </div>
                                         <div class="form-group">
                                             <label for="nama">Nama</label>
-                                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $activity->nama }}" readonly>
+                                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $activity->nama }}">
                                         </div>
                                         <div class="form-group">
-                                            <label for="date">Tanggal</label>
-                                            <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{ $activity->tanggal }}">
+                                            <label for="initial">Initial</label>
+                                            <input type="text" class="form-control" id="initial" name="initial" value="{{ $activity->initial }}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cluster">Cluster</label>
+                                            <input type="text" class="form-control" id="cluster" name="cluster" value="{{ $activity->cluster }}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="start">Start</label>
+                                            <input type="datetime-local" class="form-control" id="start" name="start" value="{{ $activity->start }}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="end">End</label>
+                                            <input type="datetime-local" class="form-control" id="end" name="end" value="{{ $activity->end }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="activity">Activity</label>
                                             <input type="text" class="form-control" id="activity" name="activity" value="{{ $activity->activity }}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="image">Gambar</label>
-                                            <input type="file" class="form-control" id="image" name="image" value="{{ $activity->image }}">
                                         </div>
                                     </div>
                                     <div class="card-footer">
