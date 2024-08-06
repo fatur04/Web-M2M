@@ -92,5 +92,37 @@ class LogActivityController extends Controller
 
         return view('LogActivity.edit', compact('activity', 'activities', 'data'));
     }
+
+    public function updatelog(Request $request, $id)
+    {
+        
+        $data = [
+            'nama' => $request->nama,
+            'initial' => $request->initial,
+            'cluster' => $request->cluster,
+            'start' => $request->start,
+            'end' => $request->end,
+            'activity' => $request->activity,
+            
+            //'image' => $file,
+            //'updated_at' => $request->updated_at,
+        ];
+
+        //dd($data);
+        DB::table('logactivity')
+            ->where('id_log', $id)
+            ->update($data);
+
+        return redirect('/formActivity')->with('pesan', 'Data Berhasil Diubah');
+    }
+
+    public function delete($id)
+    {
+        DB::table('logactivity')
+                ->where('id_log', $id)
+                ->delete();
+
+        return redirect('/logactivity')->with('pesan', 'Data Deleted');
+    }
     
 }
