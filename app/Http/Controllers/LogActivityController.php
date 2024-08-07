@@ -69,9 +69,10 @@ class LogActivityController extends Controller
         DB::table('logactivity')
             ->insert($data);
 
-        //return redirect()->route('formActivity')->with('success', 'Data berhasil disimpan.');
+        
         $data = ActivityModels::all();
-        return view('LogActivity.form', ['data' => $data]);
+        return redirect('/formActivity')->with('pesan', 'Data Berhasil Diubah', ['data' => $data]);
+        //return view('LogActivity.form', ['data' => $data]);
     }
 
     public function getActivity(Request $request)
