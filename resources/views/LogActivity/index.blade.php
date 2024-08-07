@@ -44,9 +44,9 @@ $(document).ready(function() {
             </tr>
         </thead>
         <tbody>
-            @foreach ($data as $item)
+            @foreach($data as $index => $item)
                 <tr>
-                    <td>{{ $item->id_log }}</td>
+                    <td id="id" data-id="{{ $item->id_log }}">{{ $index + 1 }}</td>
                     <td>{{ $item->initial }}</td>
                     <td>{{ $item->nama }}</td>
                     <td>{{ $item->cluster }}</td>
