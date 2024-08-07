@@ -67,7 +67,7 @@ $(document).ready(function() {
                                         </div>
                                         <div class="form-group">
                                             <label for="activity">Activity</label>
-                                            <input type="text" class="form-control" id="activity" name="activity">
+                                            <textarea class="form-control" id="activity" name="activity"></textarea>
                                         </div>
                                         {{-- <div class="form-group">
                                             <label for="image">Gambar</label>

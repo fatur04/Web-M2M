@@ -38,7 +38,7 @@ $(document).ready(function() {
                 <th >Start</th>
                 <th >End</th>
                 <th >Activity</th>
-                <th >Action</th>
+                <th width="50px">Action</th>
                 <!-- <th width="30px">Evidance Pengisian Kuota</th> -->
 
             </tr>

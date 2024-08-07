@@ -42,7 +42,7 @@ $(document).ready(function() {
                                         </div>
                                         <div class="form-group">
                                             <label for="nama">Nama</label>
-                                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $activity->nama }}">
+                                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $activity->nama }}" readonly>
                                         </div>
                                         <div class="form-group">
                                             <label for="initial">Initial</label>
@@ -62,7 +62,7 @@ $(document).ready(function() {
                                         </div>
                                         <div class="form-group">
                                             <label for="activity">Activity</label>
-                                            <input type="text" class="form-control" id="activity" name="activity" value="{{ $activity->activity }}">
+                                            <textarea class="form-control" id="activity" name="activity">{{ $activity->activity }}</textarea>
                                         </div>
                                     </div>
                                     <div class="card-footer">
