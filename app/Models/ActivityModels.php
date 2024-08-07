@@ -10,5 +10,5 @@ class ActivityModels extends Model
     use HasFactory;
     protected $table = "logactivity";
     protected $primaryKey = "id_log";
-    protected $fillable = ['nama', 'inisial', 'activity', 'tanggal'];
+    protected $fillable = ['nama', 'initial', 'cluster', 'start','end', 'activity', 'updated_at'];
 }
