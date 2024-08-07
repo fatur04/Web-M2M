@@ -15,9 +15,9 @@ class LogActivityController extends Controller
     public function index()
     {
         // Mengambil data awal untuk tampilan
-        $data = DB::table('logactivity')->get();
-        //dd($data);
-        return view('LogActivity.index', ['data' => $data]);
+        $data = ActivityModels::orderBy('updated_at', 'desc')
+                            ->get();
+        return view('LogActivity.index', compact('data'));
     }
 
     public function update(Request $request)
@@ -29,7 +29,8 @@ class LogActivityController extends Controller
     public function form()
     {
         $activities = InisialModels::all();
-        $data = ActivityModels::all();
+        $data = ActivityModels::orderBy('updated_at', 'desc')
+                 ->get();
         return view('LogActivity.form', ['activities' => $activities], ['data' => $data]);
     }
 
